@@ -1,0 +1,597 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.side-bar {
+  height: 100vh;
+  min-width: 13rem;
+  background-color: #0a150f;
+  position: fixed;
+  color: #fff;
+  padding: 3rem 1.5rem;
+  box-sizing: border-box;
+}
+.side-bar .wrapper {
+  position: relative;
+  height: 100%;
+}
+.side-bar .wrapper .logo {
+  display: flex;
+  align-items: center;
+  font-size: 2.6rem;
+  opacity: 0.7;
+  margin-left: 0.4rem;
+}
+.side-bar .wrapper .logo span {
+  font-size: 1.2rem;
+  letter-spacing: 0.05rem;
+  text-transform: capitalize;
+  margin-left: 0.5rem;
+}
+.side-bar .wrapper nav.main-menu {
+  margin-top: 2rem;
+}
+.side-bar .wrapper nav li {
+  margin-bottom: 0.4rem;
+}
+.side-bar .wrapper nav li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  transition: 250ms all ease-in-out;
+}
+.side-bar .wrapper nav li a span {
+  font-size: 0.7rem;
+  text-transform: capitalize;
+  opacity: 0.8;
+  margin-left: 1rem;
+}
+.side-bar .wrapper nav li:hover a, .side-bar .wrapper nav li.active a {
+  background-color: #97f675;
+  color: #0a150f;
+}
+.side-bar .wrapper .bottom-sheets {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.side-bar .wrapper .bottom-sheets .profile-action {
+  display: inline-flex;
+  align-items: center;
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.side-bar .wrapper .bottom-sheets .profile-action .avatar {
+  height: 30px;
+  width: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: blue;
+}
+.side-bar .wrapper .bottom-sheets .profile-action .avatar img {
+  width: 100%;
+}
+.side-bar .wrapper .bottom-sheets .profile-action .grp {
+  margin-left: 0.5rem;
+}
+.side-bar .wrapper .bottom-sheets .profile-action .grp .user {
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+.side-bar .wrapper .bottom-sheets .profile-action .grp a {
+  text-decoration: none;
+  font-size: 0.52rem;
+  color: #fff;
+  opacity: 0.5;
+}
+
+.content {
+  background-color: white;
+  height: 100%;
+  margin-left: 13rem;
+  display: flex;
+}
+.content .cards {
+  min-height: 26rem;
+  width: 500px;
+  height: 100vh;
+  background-color: #f1f3f0;
+  border-right: 1px solid #ebebeb;
+}
+.content .card-head {
+  background-color: #f8faf7;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ebebeb;
+}
+.content .card-head h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #073f07;
+}
+.content .card-head .btn {
+  font-size: 1.2rem;
+  border: none;
+  background-color: transparent;
+  margin-left: 0.8rem;
+  cursor: pointer;
+  color: green;
+  transition: 1s;
+}
+.content .card-list li {
+  background-color: #faf8f7;
+  position: relative;
+  padding: 1.2rem 1.6rem;
+  border-bottom: 1px solid #ebebeb;
+  overflow: hidden;
+  cursor: pointer;
+}
+.content .card-list .card-details .title {
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.content .card-list .card-details .status {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0.6rem 0;
+  position: relative;
+  padding-left: 0.8rem;
+}
+.content .card-list .card-details .status::before {
+  content: "";
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: #0a150f;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.content .card-list .card-details .access {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+.content .card-list .card-details .access .txt {
+  opacity: 0.8;
+  font-weight: 500;
+}
+.content .card-list .card-details .access .count {
+  margin-left: 0.6rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaeaea;
+  height: 18px;
+  width: 22px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 3px;
+}
+.content .card-list .card-design {
+  position: absolute;
+  width: 140px;
+  height: 92px;
+  background-color: #fff;
+  border-top-left-radius: 12px;
+  border: 1px solid #ebebeb;
+  right: -20px;
+  bottom: -1px;
+  transform: translateX(45px);
+  transition: 150ms transform ease-in-out;
+}
+.content .card-list .card-design .stripe {
+  height: 1.35rem;
+  width: 100%;
+  background: linear-gradient(40deg, #f1f1f1, #fff);
+  position: relative;
+  top: 1rem;
+}
+.content .card-list .card-design .last-four-digits {
+  position: absolute;
+  top: 3.5rem;
+  left: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #0a150f;
+}
+.content .card-list li.active, .content .card-list li:hover {
+  background: #1f332b;
+  border-bottom: 1ps solid #1f332b;
+  color: #fff;
+}
+.content .card-list li.active .card-details .status::before, .content .card-list li:hover .card-details .status::before {
+  background-color: #fff;
+}
+.content .card-list li.active .card-details .count, .content .card-list li:hover .card-details .count {
+  background-color: #305344;
+}
+.content .card-list li.active .card-design, .content .card-list li:hover .card-design {
+  background-color: #305344;
+  border: none;
+  transform: translatex(10px);
+}
+.content .card-list li.active .card-design .stripe, .content .card-list li:hover .card-design .stripe {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
+}
+.content .card-list li.active .card-design .last-four-digits, .content .card-list li:hover .card-design .last-four-digits {
+  color: #fff;
+}
+.content .card-list li.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  margin-top: 0.8rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1607843137);
+}
+.content .card-list li.disabled .card-details .status {
+  opacity: 0.3;
+}
+.content .card-list li.disabled .card-details .access {
+  display: none;
+}
+.content .card-data {
+  width: 100%;
+}
+.content .card-data .wrapper {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  padding-top: 1rem;
+}
+.content .card-data .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.1rem;
+}
+.content .card-data .header .header-title {
+  display: flex;
+  align-items: center;
+}
+.content .card-data .header .header-title .logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #97f675;
+  width: 45px;
+  height: 40px;
+}
+.content .card-data .header .header-title .logo::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 18px;
+  background-color: #0a150f;
+  background-color: 2px;
+}
+.content .card-data .header .header-title h1 {
+  margin-left: 1.3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: darkgreen;
+}
+.content .card-data .header .manage {
+  background: none;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.4rem 1.4rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #1f332b;
+  text-transform: capitalize;
+  transition: 150ms all ease-in-out;
+}
+.content .card-data .header .manage i {
+  margin-left: 1rem;
+  font-size: 1.4rem;
+  position: relative;
+  top: 1px;
+}
+.content .card-data .header .manage:hover {
+  background-color: #1f332b;
+  color: #fff;
+}
+.content .card-data .details {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ebebeb;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+}
+.content .card-data .details .title {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 600;
+  opacity: 0.3;
+  margin-bottom: 1rem;
+}
+.content .card-data .details .value {
+  display: flex;
+  align-items: top;
+  color: #1f332b;
+}
+.content .card-data .details .value .-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.content .card-data .details .card-number .fa-clone {
+  font-size: 0.9rem;
+  margin-left: 0.8rem;
+}
+.content .card-data .details .cvc .value {
+  display: flex;
+  align-items: center;
+}
+.content .card-data .details .cvc .value .fa-star {
+  font-size: 0.7rem;
+  margin-left: -4px;
+}
+.content .card-data .details .cvc .value .fa-eye {
+  margin-top: 0.2rem;
+  margin-left: 8px;
+  font-size: 0.9rem;
+}
+.content .card-data .details .divider {
+  width: 1px;
+  background-color: #ebebeb;
+}
+.content .card-data .spendings {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+.content .card-data .spendings .spending-limits {
+  width: 50%;
+}
+.content .card-data .spendings .spending-limits .title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.content .card-data .spendings .spending-limits .title::first-letter {
+  text-transform: uppercase;
+}
+.content .card-data .spendings .spending-limit-stats .-title {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 600;
+  opacity: 0.3;
+  margin-bottom: 1rem;
+}
+.content .card-data .spendings .progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ebebeb;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+.content .card-data .spendings .progress-bar .progress-fill {
+  display: block;
+  height: inherit;
+  width: 10%;
+  background-color: #305344;
+}
+.content .card-data .spendings .stat-data {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #305344;
+}
+.content .card-data .spendings .estimated {
+  position: relative;
+  background-color: #ebebeb;
+  color: #305344;
+  width: 40%;
+  padding: 1.2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.content .card-data .spendings .estimated .desc {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+}
+.content .card-data .spendings .estimated .grp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+.content .card-data .spendings .estimated .grp .amount {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.content .card-data .spendings .estimated .grp a {
+  position: relative;
+  font-size: 1rem;
+  color: #305344;
+}
+.content .card-data .spendings .estimated .grp a::before {
+  content: "";
+  position: absolute;
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  background-color: #305344;
+  top: -30px;
+  left: -35px;
+}
+.content .card-data .spendings .estimated .grp a i {
+  position: relative;
+}
+.content .card-data .issued-access {
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+}
+.content .card-data .issued-access .header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+}
+.content .card-data .issued-access .header .title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.content .card-data .issued-access .header .title::first-letter {
+  text-transform: capitalize;
+}
+.content .card-data .issued-access .header .count {
+  margin-left: 0.6rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaeaea;
+  height: 18px;
+  width: 22px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 3px;
+}
+.content .card-data .issued-access table {
+  width: 100%;
+}
+.content .card-data .issued-access table tr {
+  border-bottom: 20px solid transparent;
+}
+.content .card-data .issued-access table td {
+  vertical-align: middle;
+}
+.content .card-data .issued-access .user {
+  display: flex;
+  align-items: center;
+}
+.content .card-data .issued-access .user .avatar {
+  height: 25px;
+  width: 25px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: blue;
+}
+.content .card-data .issued-access .user .avatar img {
+  max-width: 100%;
+}
+.content .card-data .issued-access .user .username {
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+.content .card-data .issued-access .item {
+  text-transform: capitalize;
+  opacity: 0.35;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.content .card-data .issued-access .group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.content .card-data .issued-access .group .price {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #1f332b;
+}
+.content .card-data .issued-access .group a {
+  font-size: 0.8rem;
+  margin-left: 2rem;
+  color: #1f332b;
+}
+.content .card-data .recent-transactions {
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 2rem;
+}
+.content .card-data .recent-transactions .header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+}
+.content .card-data .recent-transactions .header .title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.content .card-data .recent-transactions .header .title::first-letter {
+  text-transform: capitalize;
+}
+.content .card-data .recent-transactions table {
+  width: 100%;
+}
+.content .card-data .recent-transactions table tr {
+  border-bottom: 20px solid transparent;
+}
+.content .card-data .recent-transactions table td {
+  vertical-align: middle;
+}
+.content .card-data .recent-transactions table .user {
+  display: flex;
+  align-items: center;
+}
+.content .card-data .recent-transactions table .user .avatar {
+  height: 25px;
+  width: 25px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: blue;
+}
+.content .card-data .recent-transactions table .user .avatar img {
+  max-width: 100%;
+}
+.content .card-data .recent-transactions table .user .username {
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+.content .card-data .recent-transactions table .item {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  opacity: 0.35;
+  font-weight: 600;
+  margin-left: 4.5rem;
+}
+.content .card-data .recent-transactions table .month {
+  background-color: #eaeaea;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+.content .card-data .recent-transactions table .group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.content .card-data .recent-transactions table .group .price {
+  font-weight: 600;
+  color: #1f332b;
+}
+.content .card-data .recent-transactions table .group a {
+  margin-left: 2rem;
+  color: #1f332b;
+}/*# sourceMappingURL=style.css.map */
